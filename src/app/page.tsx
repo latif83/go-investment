@@ -1,113 +1,253 @@
-import Image from 'next/image'
+import React from "react";
+import styles from "./page.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook,faTwitter,faInstagram } from "@fortawesome/free-brands-svg-icons";
+// import { useParallax } from 'react-scroll-parallax';
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+function page() {
+  // const { ref } = useParallax({ speed: 10 });
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className={`${styles.container}`}>
+      <div
+        className={`${styles.bg} px-20 pt-5 pb-5 items-center gap-3 justify-evenly`}
+      >
+        <div>
+          <h1 className={`${styles.content} font-bold`}>
+            Save time. Get <span className="text-red-700">higher return</span>.{" "}
+            <br /> Multiply wealth.
+          </h1>
+        </div>
+        <div className={`${styles.btnCon} text-center`}>
+          <button
+            style={{
+              color: "#1b3729",
+              borderTopRightRadius: "10px",
+              borderBottomLeftRadius: "10px",
+              display: "inline-flex",
+              width: "max-content",
+              border: "2px solid #1b3729;",
+            }}
+            className={`${styles.mw} text-white rounded-sm p-2 items-center`}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            FIND OUT MORE
+            <FontAwesomeIcon
+              className="pl-3"
+              icon={faChevronRight}
+              width={20}
             />
-          </a>
+          </button>
+        </div>
+      </div>
+      <div className={`${styles.mainCon} flex justify-between px-10 mt-10`}>
+        <div className={`${styles.con} flex p-6`}>
+          <Image
+            className={styles.conImage}
+            src="/im1.svg"
+            alt="image"
+            width={310}
+            height={310}
+          />
+          <h1
+            style={{
+              fontSize: "1.5rem !important",
+              fontWeight: "bold",
+              color: "#f2f2f2",
+            }}
+          >
+            Various assets
+          </h1>
+          <p className="mt-3" style={{ color: "white" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+            exercitationem assumenda minus, enim sit, a cum dolor excepturi eum
+            sunt doloribus quia doloremque aliquam dicta repellendus consectetur
+            ratione eligendi? Quae.
+          </p>
+        </div>
+        <div className={`${styles.con} flex p-6`}>
+          <Image
+            className={styles.conImage}
+            src="/im2.svg"
+            alt="image"
+            width={310}
+            height={310}
+          />
+          <h1
+            style={{
+              fontSize: "1.5rem !important",
+              fontWeight: "bold",
+              color: "#f2f2f2",
+            }}
+          >
+            Market Analysis
+          </h1>
+          <p className="mt-3" style={{ color: "white" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+            exercitationem assumenda minus, enim sit, a cum dolor excepturi eum
+            sunt doloribus quia doloremque aliquam dicta repellendus consectetur
+            ratione eligendi? Quae.
+          </p>
+        </div>
+
+        <div className={`${styles.con} flex p-6`}>
+          <Image
+            className={styles.conImage}
+            src="/im3.svg"
+            alt="image"
+            width={310}
+            height={310}
+          />
+          <h1
+            style={{
+              fontSize: "1.5rem !important",
+              fontWeight: "bold",
+              color: "#f2f2f2",
+            }}
+          >
+            Enhanced tools
+          </h1>
+          <p className="mt-3" style={{ color: "white" }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+            exercitationem assumenda minus, enim sit, a cum dolor excepturi eum
+            sunt doloribus quia doloremque aliquam dicta repellendus consectetur
+            ratione eligendi? Quae.
+          </p>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <div
+        className={`${styles.about} mt-5 p-5 px-20 text-white`}
+        style={{ backgroundColor: "black", lineHeight: 2 }}
+      >
+        <h1 style={{ fontWeight: "bold" }}>ABOUT US</h1>
+        <hr style={{ width: 15 }} />
+        <p className="mt-5">
+          Go Investment is a premier investment company that is dedicated to
+          providing a wide range of investment opportunities for individuals and
+          institutions through public listing. We are a team of experienced
+          investment professionals who have a passion for helping our clients
+          achieve their financial goals. Our platform is designed to provide
+          companies with a secure and user-friendly way to reach out to a large
+          pool of investors and raise capital.
+        </p>
+        <h1 className="mt-10" style={{ fontWeight: "bold" }}>
+          OUR MISSION
+        </h1>
+        <hr style={{ width: 20 }} />
+        <p className="mt-5">
+          Our ultimate goal is to enable enterprises regardless of their scale,
+          to achieve their maximum potential by providing them access to the Bid
+          market. We firmly believe that every business deserves equal
+          opportunity to expand and flourish, and our user-friendly platform has
+          been specially crafted to translate this belief into reality. Our main
+          focus will be giving enterprises access to public listing on the bid
+          market at a convinient cost.
+        </p>
+      </div>
+
+      <div className={`${styles.waiting} py-10 text-center px-20`}>
+       <div className={`${styles.waitingContainer}`}>
+       <h1 style={{ fontWeight: "bold" }}>RESERVE A SPOT NOW</h1>
+        <hr
+          className="mt-2"
+          style={{
+            width: 40,
+            margin: "auto",
+            borderColor: "black",
+            backgroundColor: "black",
+          }}
         />
+        <p className="mt-3">Be the next person on the waiting list.</p>
+
+        <form className="flex mt-10 flex-col items-center">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            className="w-full p-2 mb-5 border-2 border-gray-200 rounded-md"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            className="w-full p-2 mb-5 border-2 border-gray-200 rounded-md"
+          />
+          <select
+            name="selection"
+            className="w-full p-2 mb-5 border-2 border-gray-200 rounded-md"
+          >
+            <option value="">what best describes you.</option>
+            <option value="individual">Individual</option>
+            <option value="company">Company</option>
+            <option value="investor">Investor</option>
+          </select>
+          <button
+            type="submit"
+            className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+          >
+            Join Waiting List
+          </button>
+        </form>
+        <footer className={`${styles.footer} mt-10`}>
+          <div className={`${styles.footerFlex} flex justify-evenly`}>
+          <Link
+            href="/"
+            className="flex-col justify-center"
+            style={{ display: "inline-block", flex: 1 }}
+          >
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={100}
+              height={100}
+              className={`${styles.image} object-contain`}
+            />
+            <p style={{textAlign:'left'}} className="logo_text font-black w-full m-0">Investment</p>
+          </Link>
+          <div className={styles.footerFlexCon} style={{flex:1,textAlign:'left'}}>
+          <h1 style={{fontWeight:'bold'}}>Contact Us</h1>
+              <p>+233 244 808 0452</p>
+
+              <h1 className="mt-5" style={{fontWeight:'bold'}}>Locate Us</h1>
+              <p>Accra, Ghana</p>
+          </div>
+          <div style={{flex:1}}>
+            <h1>follow Us</h1>
+            <div className="flex">
+            <Link href="/" className="flex justify-center" style={{flex:1,textAlign:'center'}}>
+            <FontAwesomeIcon
+              className="pl-3"
+              icon={faFacebook}
+              width={50}
+            />
+            </Link>
+            <Link href="/" className="flex justify-center" style={{flex:1,textAlign:'center'}}>
+            <FontAwesomeIcon
+              className="pl-3"
+              icon={faTwitter}
+              width={50}
+            />
+              </Link>
+            <Link href="/" className="flex justify-center" style={{flex:1,textAlign:'center'}}>
+            <FontAwesomeIcon
+              className="pl-3"
+              icon={faInstagram}
+              width={50}
+            />
+            </Link>
+            </div>
+          </div>
+          </div>
+          <p className="mt-6">Copyright &copy; 2023 Go Investment</p>
+</footer>
+       </div>
+
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
+
+export default page;
