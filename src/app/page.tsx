@@ -13,7 +13,7 @@ function page() {
   return (
     <div className={`${styles.container}`}>
       <div
-        className={`${styles.bg} px-20 pt-5 pb-5 items-center gap-3 justify-evenly`}
+        className={`${styles.bg} px-20 py-10 items-center gap-3 justify-evenly`}
       >
         <div>
           <h1 className={`${styles.content} font-bold`}>
