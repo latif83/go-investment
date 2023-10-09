@@ -1,15 +1,26 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
+import {useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight,faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faBarsStaggered,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
+import "animate.css";
 
 function Navbar() {
+  const [openMenu,setOpenMenu]=useState(false)
   return (
     <>
-      <header className={`${styles.header} pb-10`}>
+      <header
+        className={`${styles.header} pb-10 animate__animated animate__bounce`}
+      >
         <nav
-          className={`${styles.nav} px-10 flex justify-between items-center nav container pt-3`}
+          style={{ margin: "auto" }}
+          className={`${styles.nav} px-10 flex justify-between items-center nav pt-3`}
         >
           <Link
             href="/"
@@ -26,14 +37,20 @@ function Navbar() {
             <p className="logo_text font-black w-full m-0">Investment</p>
           </Link>
 
-          <div className={`${styles.links} text-center`} style={{ flex: 1 }}>
-            <Link href="/">About US</Link>
-            <Link className="pl-4" href="/">
-              Contact US
-            </Link>
+          <div
+            className={`${styles.links} flex justify-between`}
+            style={{ flex: 2 }}
+          >
+            <Link href="/">Market Activity</Link>
+            <Link href="/">Solutions</Link>
+            <Link href="/">Insights</Link>
+            <Link href="/">Technologies</Link>
           </div>
 
-          <div style={{ flex: 1, textAlign: "right" }} className={styles.mbFlex}>
+          <div
+            style={{ flex: 1, textAlign: "right", fontWeight: "bold" }}
+            className={styles.mbFlex}
+          >
             <button style={{ display: "inline-flex" }} className="items-center">
               Join Now
               <FontAwesomeIcon
@@ -42,7 +59,15 @@ function Navbar() {
                 width="20"
               />
             </button>
-            <FontAwesomeIcon className={`${styles.menuIcon} hidden`} width={30} icon={faBarsStaggered} />
+            <button onClick={()=>{
+              setOpenMenu(!openMenu)
+            }}>
+            <FontAwesomeIcon
+              className={`${styles.menuIcon} hidden`}
+              width={30}
+              icon={faBarsStaggered}
+            />
+            </button>
           </div>
 
           {/* Desktop navigation */}
@@ -51,6 +76,33 @@ function Navbar() {
       </div> */}
 
           {/* Mobile Navigation */}
+          {openMenu && <div className={`${styles.mbMenu} animate__animated animate__bounce`}>
+            <div
+              className="flex flex-col gap-10 h-100 w-full items-center text-center mt-5"
+              style={{ fontSize: "2rem", position: "relative", zIndex: 99 }}
+            >
+              <div className="flex justify-between w-full items-center" style={{paddingLeft:20,paddingRight: 20}}>
+              <button className={styles.regBtn}>
+                Join Now
+              </button>
+              <button onClick={()=>{
+              setOpenMenu(!openMenu)
+            }}>
+              <FontAwesomeIcon
+                icon={faClose}
+                width="20"
+              />
+              </button>
+              </div>
+              <Link href="/">Market Activity</Link>
+              <Link href="/">Solutions</Link>
+              <Link href="/">Insights</Link>
+              <Link href="/">Technologies</Link>
+              <button className={styles.loginBtn}>
+                Login
+              </button>
+            </div>
+          </div>}
           {/* <div className="sm:hidden flex relative">
         {isUserLoggedIn ? (
           <div className="flex">
@@ -107,20 +159,23 @@ function Navbar() {
       </div> */}
         </nav>
         <div className={`${styles.banner} pt-16 pb-10 px-10`}>
-          <div className={`${styles.bannerFlex} flex items-center gap-1 justify-evenly`}>
-            <div style={{flex:1}}>
+          <div
+            className={`${styles.bannerFlex} flex items-center gap-1 justify-evenly`}
+          >
+            <div style={{ flex: 1 }}>
               <h1
                 className="text-gray-50 text-2xl font-black"
-                style={{ fontSize: "3em", fontWeight: "bolder",lineHeight:1 }}
+                style={{ fontSize: "3em", fontWeight: "bolder", lineHeight: 1 }}
               >
-                New Standard <br /> in stock broker.
+                Start Earning <br /> with GOI Today!!
               </h1>
               <p className="text-white mt-4">
-                Trade forex, commodities, synthetic and stock indices from a
-                single account.
+                Explore our Listings today and investing.
               </p>
             </div>
-            <div className={`${styles.flex} text-center flex justify-center items-center`}>
+            <div
+              className={`${styles.flex} text-center flex justify-center items-center`}
+            >
               <Image src="/main4.png" width={300} height={300} alt="image" />
             </div>
           </div>

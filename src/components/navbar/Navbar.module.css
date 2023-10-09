@@ -1,6 +1,7 @@
 .header{
     background-color: red;
     position: relative;
+    z-index: 1;
 }
 
 .header::before{
@@ -37,6 +38,62 @@
     color: #f2f2f2;
 }
 
+.mbMenu{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100%;
+    background-color: #1b3729;
+    z-index: 999;
+}
+
+.mbMenu::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #1b3729; */
+    z-index: 1;
+    background-image: url(/coins.png);
+    background-size: cover;
+    background-position: bottom;
+    opacity: 50%;
+}
+
+.loginBtn{
+    /* margin-left: 2em;
+    margin-right: 2em; */
+    background-color: #919359;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 80%;
+    padding: 10px;
+}
+
+.regBtn{
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+}
+
+.mbMenu::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #1b3729; */
+    z-index: 0;
+    background-image: url(/slide.png);
+    background-size: cover;
+    background-position: center;
+}
+
 .banner{
     position: relative;
     z-index: 999;
@@ -45,6 +102,26 @@
 
 .flex{
     flex: 1;
+}
+
+@media screen and (max-width:900px) {
+    .links{
+        font-size: .9rem;
+        display: none;
+    }
+    .menuIcon{
+        display: inline-block;
+        margin-left: 5%;
+    }
+    .mbFlex{
+        display: flex;
+        justify-content: flex-end;
+        flex: 1.5 !important;
+        align-items: center;
+    }
+    .mbMenu{
+        display: flex;
+    }
 }
 
 @media screen and (max-width:830px) {
@@ -72,12 +149,14 @@
     }
     .menuIcon{
         display: inline-block;
+        margin-right: 0%;
     }
 
     .mbFlex{
         display: flex;
         justify-content: space-evenly;
         flex: 1.5 !important;
+        align-items: center;
     }
     .header::after{
         opacity: 100%;
