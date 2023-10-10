@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <>
       <header
-        className={`${styles.header} pb-10 animate__animated animate__bounce`}
+        className={`${styles.header} pb-10 animate__animated animate__fadeInDownBig`}
       >
         <nav
           style={{ margin: "auto" }}
@@ -76,10 +76,10 @@ function Navbar() {
       </div> */}
 
           {/* Mobile Navigation */}
-          {openMenu && <div className={`${styles.mbMenu} animate__animated animate__bounce`}>
+          {openMenu && <div className={`${styles.mbMenu} animate__animated animate__backInLeft`}>
             <div
               className="flex flex-col gap-10 h-100 w-full items-center text-center mt-5"
-              style={{ fontSize: "2rem", position: "relative", zIndex: 99 }}
+              style={{ fontSize: "1.5rem", position: "relative", zIndex: 99 }}
             >
               <div className="flex justify-between w-full items-center" style={{paddingLeft:20,paddingRight: 20}}>
               <button className={styles.regBtn}>
@@ -103,60 +103,7 @@ function Navbar() {
               </button>
             </div>
           </div>}
-          {/* <div className="sm:hidden flex relative">
-        {isUserLoggedIn ? (
-          <div className="flex">
-            <Image
-              src="/assets/images/logo.svg"
-              width={37}
-              height={37}
-              className="rounded-full"
-              alt="Profile"
-              onClick={() => {
-                setToggleDropdown((prev) => !prev);
-              }}
-            />
 
-            {toggleDropdown && (
-              <div className="dropdown">
-                {" "}
-                <Link
-                  href="/profile"
-                  onClick={() => setToggleDropdown(false)}
-                  className="dropdown_link"
-                >
-                  My Profile
-                </Link>{" "}
-                {" "}
-                <Link
-                  href="/create-prompt"
-                  onClick={() => setToggleDropdown(false)}
-                  className="dropdown_link"
-                >
-                  Create Prompt
-                </Link>{" "}
-                <button type="button" onClick={()=>{setToggleDropdown(false); signOut();}} className="mt-5 w-full black_btn">
-                    Sign Out
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          <>
-            {providers &&
-              Object.values(providers).map((provider) => {
-                <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => signIn(provider.id)}
-                  className="black_btn"
-                >
-                  Sign In
-                </button>;
-              })}
-          </>
-        )}
-      </div> */}
         </nav>
         <div className={`${styles.banner} pt-16 pb-10 px-10`}>
           <div
