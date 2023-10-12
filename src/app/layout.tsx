@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Navbar from '@/components/navbar/Navbar'
 import Com from '@/components/com/Com'
 import 'animate.css'
 
@@ -21,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Com>
-        <Navbar />
         {children}
         </Com>
         </body>

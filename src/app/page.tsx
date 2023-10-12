@@ -6,11 +6,40 @@ import { faFacebook,faTwitter,faInstagram } from "@fortawesome/free-brands-svg-i
 // import { useParallax } from 'react-scroll-parallax';
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/navbar/Navbar"
 
 function page() {
   // const { ref } = useParallax({ speed: 10 });
 
   return (
+    <>
+    <header
+        className={`${styles.header} pb-10 animate__animated animate__fadeInDownBig`}
+      >
+        <Navbar />
+        <div className={`${styles.banner} pt-16 pb-10 px-10`}>
+          <div
+            className={`${styles.bannerFlex} flex items-center gap-1 justify-evenly`}
+          >
+            <div style={{ flex: 1 }}>
+              <h1
+                className="text-gray-50 text-2xl font-black"
+                style={{ fontSize: "3em", fontWeight: "bolder", lineHeight: 1 }}
+              >
+                Start Earning <br /> with GOI Today!!
+              </h1>
+              <p className="text-white mt-4">
+                Explore our Listings today and investing.
+              </p>
+            </div>
+            <div
+              className={`${styles.flex} text-center flex justify-center items-center`}
+            >
+              <Image src="/main4.png" width={300} height={300} alt="image" />
+            </div>
+          </div>
+        </div>
+      </header>
     <div className={`${styles.container}`}>
       <div
         className={`${styles.bg} px-20 py-10 items-center gap-3 justify-evenly`}
@@ -247,6 +276,7 @@ function page() {
 
       </div>
     </div>
+    </>
   );
 }
 
