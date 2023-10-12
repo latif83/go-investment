@@ -16,7 +16,7 @@ import Image from "next/image";
 function page() {
   return (
     <div>
-      <div className={`${styles.solutionHeader} pb-8`}>
+      <div className={`${styles.solutionHeader} animate__animated animate__backInUp pb-8`}>
         <Navbar />
         <div className={`${styles.container} text-white mt-8 mx-auto text-center`}>
           <h3>End-To-End Capital Raising Solutions</h3>
