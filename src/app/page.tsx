@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +12,19 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import './styles.css';
+
+// import required modules
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 function page() {
   // const { ref } = useParallax({ speed: 10 });
@@ -44,6 +58,7 @@ function page() {
           </div>
         </div>
       </header>
+
       <div className={`${styles.container}`}>
         <div
           className={`${styles.bg} px-20 py-10 items-center gap-3 justify-evenly`}
@@ -151,8 +166,61 @@ function page() {
           </div>
         </div>
 
+        <div className={`mt-5 py-5 px-10 ${styles.swiperContainer}`} style={{backgroundColor:'aliceblue'}}>
+          <h1 className="mb-2 text-center" style={{fontWeight:'bold',fontSize:'1.3em'}}>Our Top Trending Companies</h1>
+          <Swiper
+            className={styles.swiper}
+            effect={"coverflow"}
+            rewind={true}
+            grabCursor={true}
+            centeredSlides={false}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={true}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+          >
+            
+            <SwiperSlide className={styles.swiperSlide}>
+              <img className={styles.swiperImg} src="/frutelli.png" />
+              {/* <Image className={styles.swiperImg} src="/frutelli.png" alt="Frutelli" width={300} height={300} /> */}
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <img className={styles.swiperImg} src="/geisha.jpg" />
+            </SwiperSlide>
+            <SwiperSlide
+              className={styles.swiperSlide}
+              style={{ backgroundColor: "#10069f" }}
+            >
+              <img className={styles.swiperImg} src="/tampico.svg" />
+            </SwiperSlide>
+            <SwiperSlide
+              className={styles.swiperSlide}
+              style={{ backgroundColor: "#0048ff" }}
+            >
+              <img className={styles.swiperImg} src="/pepsodent.svg" />
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <img className={styles.swiperImg} src="/keysoap.jpg" />
+              {/* <Image className={styles.swiperImg} src="/keysoap.jpg" alt="key soap" width={300} height={300} /> */}
+            </SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
+              <img className={styles.swiperImg} src="/mtn.jpg" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+
         <div
-          className={`${styles.about} mt-5 p-5 px-20 text-white`}
+          className={`${styles.about} p-5 px-20 text-white`}
           style={{ backgroundColor: "black", lineHeight: 2 }}
         >
           <h1 style={{ fontWeight: "bold" }}>ABOUT US</h1>

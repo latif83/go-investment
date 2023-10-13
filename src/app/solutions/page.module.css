@@ -49,6 +49,7 @@
     background-image: url(/gradient.png);
     background-size: cover;
     background-position: bottom;
+    /* background-blend-mode: luminosity; */
 }
 
 @media screen and (max-width:500px) {
