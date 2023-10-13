@@ -109,10 +109,10 @@ function page() {
               Various assets
             </h1>
             <p className="mt-3" style={{ color: "white" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-              exercitationem assumenda minus, enim sit, a cum dolor excepturi
-              eum sunt doloribus quia doloremque aliquam dicta repellendus
-              consectetur ratione eligendi? Quae.
+              Explore a diverse range of investment options, from traditional
+              stocks and bonds to alternative assets like real estate and
+              cryptocurrencies. Diversify your portfolio to manage risk and
+              enhance returns.
             </p>
           </div>
           <div className={`${styles.con} flex p-6`}>
@@ -133,10 +133,9 @@ function page() {
               Market Analysis
             </h1>
             <p className="mt-3" style={{ color: "white" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-              exercitationem assumenda minus, enim sit, a cum dolor excepturi
-              eum sunt doloribus quia doloremque aliquam dicta repellendus
-              consectetur ratione eligendi? Quae.
+              Access real-time market updates, technical and fundamental
+              analysis tools, economic event calendars, and expert insights to
+              stay informed and make well-informed investment decisions.
             </p>
           </div>
 
@@ -158,16 +157,25 @@ function page() {
               Enhanced tools
             </h1>
             <p className="mt-3" style={{ color: "white" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-              exercitationem assumenda minus, enim sit, a cum dolor excepturi
-              eum sunt doloribus quia doloremque aliquam dicta repellendus
-              consectetur ratione eligendi? Quae.
+              Utilize cutting-edge tools for risk assessment, portfolio
+              management, algorithmic trading, and access educational resources
+              to empower your investment strategies. Our platform is designed to
+              provide you with the tools and information needed to succeed in
+              the world of investing.
             </p>
           </div>
         </div>
 
-        <div className={`mt-5 py-5 px-10 ${styles.swiperContainer}`} style={{backgroundColor:'aliceblue'}}>
-          <h1 className="mb-2 text-center" style={{fontWeight:'bold',fontSize:'1.3em'}}>Our Top Trending Companies</h1>
+        <div
+          className={`mt-5 py-5 px-10 ${styles.swiperContainer}`}
+          style={{ backgroundColor: "aliceblue" }}
+        >
+          <h1
+            className="mb-2 text-center"
+            style={{ fontWeight: "bold", fontSize: "1.3em" }}
+          >
+            Our Top Trending Companies
+          </h1>
           <Swiper
             className={styles.swiper}
             effect={"coverflow"}
@@ -189,7 +197,6 @@ function page() {
             pagination={true}
             modules={[EffectCoverflow, Pagination, Autoplay]}
           >
-            
             <SwiperSlide className={styles.swiperSlide}>
               <img className={styles.swiperImg} src="/frutelli.png" />
               {/* <Image className={styles.swiperImg} src="/frutelli.png" alt="Frutelli" width={300} height={300} /> */}
